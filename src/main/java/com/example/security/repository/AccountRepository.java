@@ -16,7 +16,7 @@ public class AccountRepository {
 
     public Account getAccountByID(Integer id) {
         return accounts.stream()
-                .filter(account -> id.equals(account.getId()))
+                .filter(account -> id.equals(account.id()))
                 .findFirst().orElse(null);
     }
 
