@@ -23,4 +23,10 @@ public class AccountRepository {
     public List<Account> getAccounts() {
         return accounts;
     }
+
+    public Account findByName(String name) {
+        return accounts.stream()
+                .filter(account -> name.equals(account.name()))
+                .findFirst().orElse(null);
+    }
 }
